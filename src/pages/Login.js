@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../services/api";
+import { useAuth } from "../context/AuthContext";
 import "./Auth.css";
 
 export default function Login() {
@@ -9,6 +11,8 @@ export default function Login() {
   });
 
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+  const { login } = useAuth();
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -16,10 +20,18 @@ export default function Login() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setMessage("");
+
     try {
-      const res = await api.post("/auth/login", form);
+      const res = await api.post("/auth/login", form, { withCredentials: true });
+
+      // ⬇️ Save user in context
+      login(res.data.user);
+
       setMessage("Login successful!");
-      console.log(res.data);
+
+      // ⬇️ Redirect to dashboard
+      navigate("/dashboard");
     } catch (err) {
       setMessage(err.response?.data?.message || "Error");
     }
