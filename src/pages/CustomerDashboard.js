@@ -10,7 +10,7 @@ export default function CustomerDashboard() {
 
   const fetchBookings = async () => {
     try {
-      const res = await api.get("/bookings", { withCredentials: true });
+      const res = await api.get("/bookings/customer", { withCredentials: true });
       const list = Array.isArray(res.data.bookings) ? res.data.bookings : [];
       const my = list.filter((b) => String(b.customer) === String(user.id));
       setBookings(my);

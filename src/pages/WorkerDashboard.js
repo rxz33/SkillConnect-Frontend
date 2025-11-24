@@ -9,7 +9,7 @@ export default function WorkerDashboard() {
 
   const loadBookings = async () => {
     try {
-      const res = await api.get("/bookings", { withCredentials: true });
+      const res = await api.get("/bookings/worker", { withCredentials: true });
       const list = Array.isArray(res.data.bookings) ? res.data.bookings : [];
 
       setBookings(list);
