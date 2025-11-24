@@ -1,0 +1,64 @@
+.service-details {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+}
+
+.service-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.desc {
+  margin-top: 10px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.worker-box,
+.rating-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f7f7f7;
+  border-radius: 10px;
+}
+
+.book-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 22px;
+  background: #007bff;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.book-btn:hover {
+  background: #0056c7;
+}
+
+.note {
+  margin-top: 20px;
+  color: red;
+  font-size: 14px;
+}
+
+.loading {
+  padding: 30px;
+  font-size: 20px;
+  text-align: center;
+}

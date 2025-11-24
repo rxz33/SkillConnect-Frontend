@@ -1,0 +1,46 @@
+.worker-dashboard {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.booking-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #fff;
+}
+
+.accept-btn {
+  background: #28a745;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.reject-btn {
+  background: #dc3545;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.complete-btn {
+  background: #0066ff;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+}
+
+.status-msg {
+  padding: 10px;
+  background: #e8f5e9;
+  border-left: 4px solid #2ecc71;
+  margin-bottom: 10px;
+}

@@ -18,6 +18,18 @@ export default function Navbar() {
     }
   };
 
+  {user.role === "worker" && (
+  <>
+    <Link to="/create-listing">Add Service</Link>
+    <Link to="/worker-earnings">Earnings</Link>
+  </>
+)}
+   
+  {user && user.role === "customer" && (
+  <Link to="/recommend">AI Recommend</Link>
+)}
+
+
   return (
     <nav className="nav">
       <h2 className="logo">SkillConnect</h2>
