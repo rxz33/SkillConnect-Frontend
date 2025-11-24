@@ -1,28 +1,28 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import axios from "../services/api";
+import api from "../services/api";
 
 const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
+export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Auto fetch logged-in user
-  useEffect(() => {
-    const checkLogin = async () => {
-      try {
-        const res = await axios.get("/auth/profile", {
-          withCredentials: true,
-        });
+  // Load user on startup (important for Vercel)
+  const loadUser = async () => {
+    try {
+      const res = await api.get("/auth/profile", { withCredentials: true });
+      if (res.data?.user) {
         setUser(res.data.user);
-      } catch (err) {
-        setUser(null);
-      } finally {
-        setLoading(false);
       }
-    };
+    } catch (err) {
+      setUser(null);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    checkLogin();
+  useEffect(() => {
+    loadUser();
   }, []);
 
   const login = (userData) => {
@@ -34,10 +34,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, loading }}>
+    <AuthContext.Provider value={{ user, loading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
-};
+}
 
 export const useAuth = () => useContext(AuthContext);
