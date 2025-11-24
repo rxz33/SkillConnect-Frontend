@@ -43,3 +43,12 @@
   color: green;
   font-weight: 500;
 }
+
+.error-box {
+  color: #fff;
+  background: #ff4d4d;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  text-align: center;
+}
