@@ -10,6 +10,7 @@ import ServiceDetails from "./pages/ServiceDetails";
 import WorkerProfile from "./pages/WorkerProfile";
 import WorkerEarnings from "./pages/WorkerEarnings";
 import AiRecommend from "./pages/AiRecommend";
+import CreateListing from "./pages/CreateListing";
 
 function App() {
   return (
@@ -39,6 +40,15 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/create-listing"
+            element={
+              <ProtectedRoute>
+                <CreateListing />
+              </ProtectedRoute>
+            }
+        />
+
           <Route path="/recommend" element={<AiRecommend />} />
           {/* other routes like create-listing, listing/:id can come here */}
         </Routes>
