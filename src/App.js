@@ -10,7 +10,7 @@ import ServiceDetails from "./pages/ServiceDetails";
 import WorkerProfile from "./pages/WorkerProfile";
 import WorkerEarnings from "./pages/WorkerEarnings";
 import AiRecommend from "./pages/AiRecommend";
-import CreateListing from "./pages/CreateListing";
+import CreateListing from "./pages/CreateListing.js";
 
 function App() {
   return (
