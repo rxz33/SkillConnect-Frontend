@@ -26,19 +26,20 @@ export default function WorkerDashboard() {
   }, []);
 
   const updateStatus = async (id, status) => {
-    try {
-      await api.put(
-        `/bookings/${id}`,
-        { status },
-        { withCredentials: true }
-      );
+  try {
+    await api.put(
+      `/bookings/${id}/status`,
+      { status },
+      { withCredentials: true }
+    );
 
-      setMsg(`Booking ${status}`);
-      loadBookings();
-    } catch (err) {
-      setMsg(err.response?.data?.message || "Error updating status");
-    }
-  };
+    setMsg(`Booking ${status}`);
+    loadBookings();
+  } catch (err) {
+    setMsg(err.response?.data?.message || "Error updating status");
+  }
+};
+
 
   if (loading) return <div>Loading bookings...</div>;
 

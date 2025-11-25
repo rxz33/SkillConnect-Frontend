@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import api from "../services/api";
 
 export default function Navbar() {
-  const { user, login, logout } = useAuth();
+  const { user, logout } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -18,18 +18,6 @@ export default function Navbar() {
     }
   };
 
-  {user.role === "worker" && (
-  <>
-    <Link to="/create-listing">Add Service</Link>
-    <Link to="/worker-earnings">Earnings</Link>
-  </>
-)}
-   
-  {user && user.role === "customer" && (
-  <Link to="/recommend">AI Recommend</Link>
-)}
-
-
   return (
     <nav className="nav">
       <h2 className="logo">SkillConnect</h2>
@@ -41,7 +29,9 @@ export default function Navbar() {
           <>
             <span className="welcome">Hi, {user.name}</span>
 
-            {user.role === "worker" && <Link to="/create-listing">Add Service</Link>}
+            {user.role === "worker" && (
+              <Link to="/create-listing">Add Service</Link>
+            )}
 
             <Link to="/dashboard">Dashboard</Link>
 
