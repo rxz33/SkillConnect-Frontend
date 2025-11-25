@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
-  withCredentials: true, // 🔥 VERY IMPORTANT
+  baseURL: "https://skillconnect-backend-u3a9.onrender.com/api",
+  withCredentials: true,  // 🔥 MUST BE TRUE
 });
 
 export default api;
