@@ -5,11 +5,11 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
-import BookService from "./pages/BookService";
-import ServiceDetails from "./pages/ServiceDetails";
-import WorkerProfile from "./pages/WorkerProfile";
-import WorkerEarnings from "./pages/WorkerEarnings";
-import AiRecommend from "./pages/AiRecommend";
+import BookService from "./pages/BookService.js";
+import ServiceDetails from "./pages/ServiceDetails.js";
+import WorkerProfile from "./pages/WorkerProfile.js";
+import WorkerEarnings from "./pages/WorkerEarnings.js";
+import AiRecommend from "./pages/AiRecommend.js";
 import CreateListing from "./pages/CreateListing.js";
 
 function App() {
