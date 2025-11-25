@@ -18,20 +18,41 @@ function App() {
       <Navbar />
       <div style={{ padding: "20px" }}>
         <Routes>
+
+          {/* HOME */}
           <Route path="/" element={<Home />} />
-          <Route path="/worker/:id" element={<WorkerProfile />} />
-          <Route path="/" element={<Home />} />
+
+          {/* AUTH */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/book/:id" element={<ProtectedRoute><BookService />
-             </ProtectedRoute>
-            }
-           />
-          <Route path="/worker-earnings" element={<ProtectedRoute><WorkerEarnings />
-            </ProtectedRoute>
+
+          {/* SERVICE DETAILS */}
+          <Route path="/service/:id" element={<ServiceDetails />} />
+
+          {/* BOOKING */}
+          <Route
+            path="/book/:id"
+            element={
+              <ProtectedRoute>
+                <BookService />
+              </ProtectedRoute>
             }
           />
-          <Route path="/service/:id" element={<ServiceDetails />} />
+
+          {/* WORKER PROFILE */}
+          <Route path="/worker/:id" element={<WorkerProfile />} />
+
+          {/* WORKER EARNINGS */}
+          <Route
+            path="/worker-earnings"
+            element={
+              <ProtectedRoute>
+                <WorkerEarnings />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* DASHBOARD */}
           <Route
             path="/dashboard"
             element={
@@ -40,6 +61,8 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          {/* CREATE LISTING */}
           <Route
             path="/create-listing"
             element={
@@ -47,10 +70,11 @@ function App() {
                 <CreateListing />
               </ProtectedRoute>
             }
-        />
+          />
 
+          {/* AI RECOMMEND */}
           <Route path="/recommend" element={<AiRecommend />} />
-          {/* other routes like create-listing, listing/:id can come here */}
+
         </Routes>
       </div>
     </Router>
