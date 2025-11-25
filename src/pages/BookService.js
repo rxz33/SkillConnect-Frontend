@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../services/api";
-// import "./BookService.css";
 
 export default function BookService() {
   const { id } = useParams();
