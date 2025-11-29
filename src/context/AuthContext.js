@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react"; //global data- available for all files of each folders
 import api from "../services/api";
 
 const AuthContext = createContext();
